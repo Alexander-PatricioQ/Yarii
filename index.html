@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Amor: Cari Boo</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier New', Courier, monospace; /* Fuente estilo máquina de escribir */
+        }
+
+        body {
+            background-color: #0b0f19;
+            color: #00ffcc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .terminal {
+            background-color: rgba(11, 15, 25, 0.9);
+            border: 2px solid #ff2a6d;
+            box-shadow: 0 0 25px rgba(255, 42, 109, 0.5);
+            border-radius: 12px;
+            width: 90%;
+            max-width: 650px;
+            padding: 30px;
+            position: relative;
+            opacity: 0;
+            animation: fadeInTerminal 1.5s ease-in forwards;
+        }
+
+        @keyframes fadeInTerminal {
+            to { opacity: 1; }
+        }
+
+        .terminal-header {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #ff2a6d;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            font-size: 0.9rem;
+            color: #ff2a6d;
+        }
+
+        .dots span {
+            height: 14px;
+            width: 14px;
+            background-color: #ff2a6d;
+            display: inline-block;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        .intro-text {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            color: #d1f7ff;
+            line-height: 1.5;
+        }
+
+        .highlight {
+            color: #ff2a6d;
+            font-weight: bold;
+        }
+
+        .access-denied {
+             color: #ff2a6d;
+             font-weight: bold;
+             margin-bottom: 15px;
+        }
+
+        .btn-unlock {
+            background-color: transparent;
+            color: #00ffcc;
+            border: 2px solid #00ffcc;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.4s ease;
+            width: 100%;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .btn-unlock:hover {
+            background-color: #00ffcc;
+            color: #0b0f19;
+            box-shadow: 0 0 20px #00ffcc;
+        }
+
+        #loading-screen {
+            display: none;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .loading-dots {
+            font-size: 2rem;
+            color: #ff2a6d;
+            animation: blinker 1s linear infinite;
+            letter-spacing: 5px;
+        }
+
+        @keyframes blinker {
+            50% { opacity: 0; }
+        }
+
+        #love-letter {
+            display: none;
+            background-color: #0e1423;
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid #2a3b5c;
+            animation: fadeInLetter 1.5s ease-in-out;
+        }
+
+        @keyframes fadeInLetter {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .letter-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #d1f7ff;
+            margin-bottom: 20px;
+        }
+
+        .signature {
+            font-weight: bold;
+            color: #ff2a6d;
+            text-align: right;
+            margin-top: 30px;
+        }
+
+        /* Corazón dibujado en CSS puro */
+        .css-heart {
+            margin: 30px auto;
+            position: relative;
+            width: 60px;
+            height: 60px;
+            transform: scale(1);
+            animation: heartbeat 1.5s infinite;
+        }
+
+        .css-heart::before,
+        .css-heart::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 30px;
+            height: 50px;
+            background-color: #ff2a6d;
+            border-radius: 30px 30px 0 0;
+        }
+
+        .css-heart::before {
+            left: 30px;
+            transform: rotate(-45deg);
+            transform-origin: 0 100%;
+        }
+
+        .css-heart::after {
+            left: 0;
+            transform: rotate(45deg);
+            transform-origin: 100% 100%;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            10%, 30% { transform: scale(1.1); }
+            20%, 40% { transform: scale(1.0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="terminal">
+        <div class="terminal-header">
+            <div class="dots">
+                <span></span><span></span><span></span>
+            </div>
+            <div>SYSTEM_ACCESS_GRANTED_KARI_BOO</div>
+        </div>
+
+        <div id="login-prompt">
+            <div class="intro-text">
+                Iniciando secuencia de seguridad... <br>
+                Acceso exclusivo para <span class="highlight">Kari Boo</span>.
+            </div>
+            <p class="access-denied">>> ERROR DE AUTENTICACIÓN: Por favor, verifique su identidad.</p>
+            <button class="btn-unlock" onclick="iniciarDesbloqueo()">[ ACCEDER ]</button>
+        </div>
+
+        <div id="loading-screen">
+            <div class="loading-dots">....DESBLOQUEANDO....</div>
+        </div>
+
+        <div id="love-letter">
+            <div class="letter-content">
+                <p>Hola <span class="highlight">Mi Kari Boo</span>,</p>
+                <p>Este mensaje ha sido compilado especialmente para ti. No usa códigos complejos, sino la verdad más simple:</p>
+                <p>No hay lógica en este mundo que pueda explicar cuánto te amo. Eres la razón de mi sonrisa, mi persona favorita, mi compañera de aventuras y la mujer más increíble que he conocido. Cada día contigo es mejor que el anterior y le doy gracias a la vida por tenerte en mi camino.</p>
+                <p>Quería recordarte lo mucho que significas para mí. Te adoro con todo mi corazón.</p>
+                <p>Atentamente, Lexi Boo</p>
+                <p class="signature">Tu fan número 1</p>
+            </div>
+            <div class="css-heart"></div>
+        </div>
+    </div>
+
+    <script>
+        function iniciarDesbloqueo() {
+            document.getElementById('login-prompt').style.display = 'none';
+            const pantallaCarga = document.getElementById('loading-screen');
+            pantallaCarga.style.display = 'block';
+
+            // Simula el proceso de "desbloqueo" durante 2 segundos antes de mostrar la carta
+            setTimeout(() => {
+                pantallaCarga.style.display = 'none';
+                document.getElementById('love-letter').style.display = 'block';
+            }, 2000);
+        }
+    </script>
+
+</body>
+</html>
