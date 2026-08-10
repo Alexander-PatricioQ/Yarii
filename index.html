@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Amor: Cari Boo</title>
+    <title>Para: Mi Kari Boo</title>
     <style>
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Courier New', Courier, monospace; /* Fuente estilo máquina de escribir */
+            font-family: 'Courier New', Courier, monospace;
         }
 
         body {
@@ -18,18 +18,18 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
+            min-height: 100vh;
+            padding: 15px;
         }
 
         .terminal {
-            background-color: rgba(11, 15, 25, 0.9);
+            background-color: rgba(11, 15, 25, 0.95);
             border: 2px solid #ff2a6d;
-            box-shadow: 0 0 25px rgba(255, 42, 109, 0.5);
+            box-shadow: 0 0 25px rgba(255, 42, 109, 0.4);
             border-radius: 12px;
-            width: 90%;
-            max-width: 650px;
-            padding: 30px;
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
             position: relative;
             opacity: 0;
             animation: fadeInTerminal 1.5s ease-in forwards;
@@ -43,24 +43,24 @@
             display: flex;
             justify-content: space-between;
             border-bottom: 1px solid #ff2a6d;
-            padding-bottom: 15px;
-            margin-bottom: 25px;
-            font-size: 0.9rem;
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+            font-size: 0.85rem;
             color: #ff2a6d;
         }
 
         .dots span {
-            height: 14px;
-            width: 14px;
+            height: 12px;
+            width: 12px;
             background-color: #ff2a6d;
             display: inline-block;
             border-radius: 50%;
-            margin-right: 8px;
+            margin-right: 6px;
         }
 
         .intro-text {
-            font-size: 1.1rem;
-            margin-bottom: 25px;
+            font-size: 1rem;
+            margin-bottom: 20px;
             color: #d1f7ff;
             line-height: 1.5;
         }
@@ -74,14 +74,15 @@
              color: #ff2a6d;
              font-weight: bold;
              margin-bottom: 15px;
+             font-size: 0.9rem;
         }
 
         .btn-unlock {
             background-color: transparent;
             color: #00ffcc;
             border: 2px solid #00ffcc;
-            padding: 15px 30px;
-            font-size: 1.1rem;
+            padding: 14px 20px;
+            font-size: 1rem;
             cursor: pointer;
             border-radius: 5px;
             transition: all 0.4s ease;
@@ -89,7 +90,7 @@
             font-weight: bold;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
 
         .btn-unlock:hover {
@@ -101,14 +102,14 @@
         #loading-screen {
             display: none;
             text-align: center;
-            margin-bottom: 25px;
+            margin: 30px 0;
         }
 
         .loading-dots {
-            font-size: 2rem;
+            font-size: 1.5rem;
             color: #ff2a6d;
             animation: blinker 1s linear infinite;
-            letter-spacing: 5px;
+            letter-spacing: 3px;
         }
 
         @keyframes blinker {
@@ -118,9 +119,11 @@
         #love-letter {
             display: none;
             background-color: #0e1423;
-            padding: 25px;
+            padding: 20px;
             border-radius: 8px;
             border: 1px solid #2a3b5c;
+            max-height: 65vh;
+            overflow-y: auto;
             animation: fadeInLetter 1.5s ease-in-out;
         }
 
@@ -130,25 +133,25 @@
         }
 
         .letter-content p {
-            font-size: 1.1rem;
-            line-height: 1.8;
+            font-size: 1rem;
+            line-height: 1.7;
             color: #d1f7ff;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .signature {
             font-weight: bold;
             color: #ff2a6d;
             text-align: right;
-            margin-top: 30px;
+            margin-top: 20px;
         }
 
-        /* Corazón dibujado en CSS puro */
+        /* Corazón en CSS puro */
         .css-heart {
-            margin: 30px auto;
+            margin: 25px auto 10px auto;
             position: relative;
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             transform: scale(1);
             animation: heartbeat 1.5s infinite;
         }
@@ -158,14 +161,14 @@
             content: "";
             position: absolute;
             top: 0;
-            width: 30px;
-            height: 50px;
+            width: 25px;
+            height: 40px;
             background-color: #ff2a6d;
-            border-radius: 30px 30px 0 0;
+            border-radius: 25px 25px 0 0;
         }
 
         .css-heart::before {
-            left: 30px;
+            left: 25px;
             transform: rotate(-45deg);
             transform-origin: 0 100%;
         }
@@ -190,30 +193,29 @@
             <div class="dots">
                 <span></span><span></span><span></span>
             </div>
-            <div>SYSTEM_ACCESS_GRANTED_KARI_BOO</div>
+            <div>MENSAJE_ESPECIAL_KARI_BOO</div>
         </div>
 
         <div id="login-prompt">
             <div class="intro-text">
-                Iniciando secuencia de seguridad... <br>
-                Acceso exclusivo para <span class="highlight">Kari Boo</span>.
+                Hola, hay una sorpresa esperándote.<br>
+                Mensaje exclusivo para <span class="highlight">Mi Kari Boo</span>.
             </div>
-            <p class="access-denied">>> ERROR DE AUTENTICACIÓN: Por favor, verifique su identidad.</p>
-            <button class="btn-unlock" onclick="iniciarDesbloqueo()">[ ACCEDER ]</button>
+            <p class="access-denied">>> Verificación requerida para abrir.</p>
+            <button class="btn-unlock" onclick="iniciarDesbloqueo()">Abrir mensaje</button>
         </div>
 
         <div id="loading-screen">
-            <div class="loading-dots">....DESBLOQUEANDO....</div>
+            <div class="loading-dots">Abriendo sorpresa...</div>
         </div>
 
         <div id="love-letter">
             <div class="letter-content">
                 <p>Hola <span class="highlight">Mi Kari Boo</span>,</p>
-                <p>Este mensaje ha sido compilado especialmente para ti. No usa códigos complejos, sino la verdad más simple:</p>
-                <p>No hay lógica en este mundo que pueda explicar cuánto te amo. Eres la razón de mi sonrisa, mi persona favorita, mi compañera de aventuras y la mujer más increíble que he conocido. Cada día contigo es mejor que el anterior y le doy gracias a la vida por tenerte en mi camino.</p>
-                <p>Quería recordarte lo mucho que significas para mí. Te adoro con todo mi corazón.</p>
-                <p>Atentamente, Lexi Boo</p>
-                <p class="signature">Tu fan número 1</p>
+                <p>Quería escribirte esto para recordarte lo muchísimo que te amo. Eres de lo mejor que tengo en la vida, la razón por la que sonrías todos los días y mi persona favorita en el mundo entero.</p>
+                <p>Me encanta cada momento que pasamos juntos, las risas, las pláticas y lo especial que haces cada uno de mis días. Gracias por estar siempre y por ser tan increíble.</p>
+                <p>Te adoro con todo mi corazón.</p>
+                <p class="signature">Tu Lexi boo</p>
             </div>
             <div class="css-heart"></div>
         </div>
@@ -225,11 +227,10 @@
             const pantallaCarga = document.getElementById('loading-screen');
             pantallaCarga.style.display = 'block';
 
-            // Simula el proceso de "desbloqueo" durante 2 segundos antes de mostrar la carta
             setTimeout(() => {
                 pantallaCarga.style.display = 'none';
                 document.getElementById('love-letter').style.display = 'block';
-            }, 2000);
+            }, 1500);
         }
     </script>
 
