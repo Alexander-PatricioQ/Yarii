@@ -69,8 +69,8 @@
         }
 
         .btn-unlock {
-            background-color: transparent;
-            color: #ffb3de;
+            background-color: #ffb3de;
+            color: #0d0a14;
             border: 2px solid #ffb3de;
             padding: 14px 20px;
             font-size: 1rem;
@@ -84,10 +84,9 @@
             margin-bottom: 10px;
         }
 
-        .btn-unlock:hover {
-            background-color: #ffb3de;
-            color: #0d0a14;
-            box-shadow: 0 0 20px #ffb3de;
+        .btn-unlock:active {
+            background-color: #ff7aa2;
+            color: #fff;
         }
 
         #loading-screen {
@@ -161,7 +160,7 @@
                 Acceso exclusivo para <span class="highlight">Mi Yari preciosa 🐾✨</span>.
             </div>
             <p class="access-denied">>> Se requiere un abracito para desbloquear...</p>
-            <button class="btn-unlock" id="btn-abrir" type="button">🐾 Abrir mi cartita 🐾</button>
+            <button class="btn-unlock" onclick="abrirCartita()">🐾 Abrir mi cartita 🐾</button>
         </div>
 
         <div id="loading-screen">
@@ -188,23 +187,15 @@
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const boton = document.getElementById('btn-abrir');
-            
-            boton.addEventListener('click', function() {
-                const loginPrompt = document.getElementById('login-prompt');
-                const loadingScreen = document.getElementById('loading-screen');
-                const loveLetter = document.getElementById('love-letter');
+        function abrirCartita() {
+            document.getElementById('login-prompt').style.display = 'none';
+            document.getElementById('loading-screen').style.display = 'block';
 
-                loginPrompt.style.display = 'none';
-                loadingScreen.style.display = 'block';
-
-                setTimeout(function() {
-                    loadingScreen.style.display = 'none';
-                    loveLetter.style.display = 'block';
-                }, 1000);
-            });
-        });
+            setTimeout(function() {
+                document.getElementById('loading-screen').style.display = 'none';
+                document.getElementById('love-letter').style.display = 'block';
+            }, 1000);
+        }
     </script>
 
 </body>
