@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para: Mi Kari Boo</title>
+    <title>Para: Mi Yari 🐾💗</title>
     <style>
         * {
             box-sizing: border-box;
@@ -13,8 +13,8 @@
         }
 
         body {
-            background-color: #0b0f19;
-            color: #00ffcc;
+            background-color: #0d0a14;
+            color: #ffb3de;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -23,16 +23,16 @@
         }
 
         .terminal {
-            background-color: rgba(11, 15, 25, 0.95);
-            border: 2px solid #ff2a6d;
-            box-shadow: 0 0 25px rgba(255, 42, 109, 0.4);
-            border-radius: 12px;
+            background-color: rgba(18, 13, 28, 0.95);
+            border: 2px solid #ff7aa2;
+            box-shadow: 0 0 30px rgba(255, 122, 162, 0.35);
+            border-radius: 16px;
             width: 100%;
             max-width: 600px;
-            padding: 20px;
+            padding: 24px;
             position: relative;
             opacity: 0;
-            animation: fadeInTerminal 1.5s ease-in forwards;
+            animation: fadeInTerminal 1.2s ease-in forwards;
         }
 
         @keyframes fadeInTerminal {
@@ -42,36 +42,33 @@
         .terminal-header {
             display: flex;
             justify-content: space-between;
-            border-bottom: 1px solid #ff2a6d;
+            align-items: center;
+            border-bottom: 1px dashed #ff7aa2;
             padding-bottom: 12px;
             margin-bottom: 20px;
             font-size: 0.85rem;
-            color: #ff2a6d;
+            color: #ff7aa2;
         }
 
-        .dots span {
-            height: 12px;
-            width: 12px;
-            background-color: #ff2a6d;
-            display: inline-block;
-            border-radius: 50%;
-            margin-right: 6px;
+        .cat-ears {
+            font-size: 1rem;
+            letter-spacing: 2px;
         }
 
         .intro-text {
-            font-size: 1rem;
+            font-size: 1.05rem;
             margin-bottom: 20px;
-            color: #d1f7ff;
-            line-height: 1.5;
+            color: #ffeef8;
+            line-height: 1.6;
         }
 
         .highlight {
-            color: #ff2a6d;
+            color: #ff7aa2;
             font-weight: bold;
         }
 
         .access-denied {
-             color: #ff2a6d;
+             color: #ff7aa2;
              font-weight: bold;
              margin-bottom: 15px;
              font-size: 0.9rem;
@@ -79,24 +76,24 @@
 
         .btn-unlock {
             background-color: transparent;
-            color: #00ffcc;
-            border: 2px solid #00ffcc;
+            color: #ffb3de;
+            border: 2px solid #ffb3de;
             padding: 14px 20px;
             font-size: 1rem;
             cursor: pointer;
-            border-radius: 5px;
-            transition: all 0.4s ease;
+            border-radius: 10px;
+            transition: all 0.3s ease;
             width: 100%;
             font-weight: bold;
-            letter-spacing: 1.5px;
+            letter-spacing: 1px;
             text-transform: uppercase;
             margin-bottom: 10px;
         }
 
         .btn-unlock:hover {
-            background-color: #00ffcc;
-            color: #0b0f19;
-            box-shadow: 0 0 20px #00ffcc;
+            background-color: #ffb3de;
+            color: #0d0a14;
+            box-shadow: 0 0 20px #ffb3de;
         }
 
         #loading-screen {
@@ -106,83 +103,67 @@
         }
 
         .loading-dots {
-            font-size: 1.5rem;
-            color: #ff2a6d;
+            font-size: 1.2rem;
+            color: #ff7aa2;
             animation: blinker 1s linear infinite;
-            letter-spacing: 3px;
         }
 
         @keyframes blinker {
-            50% { opacity: 0; }
+            50% { opacity: 0.4; }
         }
 
         #love-letter {
             display: none;
-            background-color: #0e1423;
-            padding: 20px;
-            border-radius: 8px;
-            border: 1px solid #2a3b5c;
+            background-color: #161024;
+            padding: 22px;
+            border-radius: 12px;
+            border: 1px solid #3d224d;
             max-height: 65vh;
             overflow-y: auto;
-            animation: fadeInLetter 1.5s ease-in-out;
+            animation: fadeInLetter 1.2s ease-in-out;
         }
 
         @keyframes fadeInLetter {
-            from { opacity: 0; transform: scale(0.95); }
-            to { opacity: 1; transform: scale(1); }
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .letter-content p {
             font-size: 1rem;
-            line-height: 1.7;
-            color: #d1f7ff;
-            margin-bottom: 15px;
+            line-height: 1.8;
+            color: #ffeef8;
+            margin-bottom: 16px;
         }
 
         .signature {
             font-weight: bold;
-            color: #ff2a6d;
+            color: #ff7aa2;
             text-align: right;
             margin-top: 20px;
+            font-size: 1.1rem;
         }
 
-        /* Corazón en CSS puro */
-        .css-heart {
-            margin: 25px auto 10px auto;
-            position: relative;
-            width: 50px;
-            height: 50px;
-            transform: scale(1);
-            animation: heartbeat 1.5s infinite;
+        .cat-deco {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-top: 15px;
+            user-select: none;
         }
 
-        .css-heart::before,
-        .css-heart::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            width: 25px;
-            height: 40px;
-            background-color: #ff2a6d;
-            border-radius: 25px 25px 0 0;
+        /* Corazón animado con orejitas */
+        .cute-heart-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            font-size: 1.5rem;
+            animation: pulse 1.5s infinite;
         }
 
-        .css-heart::before {
-            left: 25px;
-            transform: rotate(-45deg);
-            transform-origin: 0 100%;
-        }
-
-        .css-heart::after {
-            left: 0;
-            transform: rotate(45deg);
-            transform-origin: 100% 100%;
-        }
-
-        @keyframes heartbeat {
+        @keyframes pulse {
             0%, 100% { transform: scale(1); }
-            10%, 30% { transform: scale(1.1); }
-            20%, 40% { transform: scale(1.0); }
+            50% { transform: scale(1.1); }
         }
     </style>
 </head>
@@ -190,49 +171,42 @@
 
     <div class="terminal">
         <div class="terminal-header">
-            <div class="dots">
-                <span></span><span></span><span></span>
-            </div>
-            <div>MENSAJE_ESPECIAL_KARI_BOO</div>
+            <div class="cat-ears">ฅ^•ﻌ•^ฅ</div>
+            <div>MENSAJE_ESPECIAL_PARA_YARI.exe</div>
         </div>
 
         <div id="login-prompt">
             <div class="intro-text">
-                Hola, hay una sorpresa esperándote.<br>
-                Mensaje exclusivo para <span class="highlight">Mi Kari Boo</span>.
+                Hola bonita, hay una cartita secreta esperándote.<br>
+                Acceso exclusivo para <span class="highlight">Mi Yari preciosa 🐾✨</span>.
             </div>
-            <p class="access-denied">>> Verificación requerida para abrir.</p>
-            <button class="btn-unlock" onclick="iniciarDesbloqueo()">Abrir mensaje</button>
+            <p class="access-denied">>> Se requiere un abracito para desbloquear...</p>
+            <button class="btn-unlock" onclick="iniciarDesbloqueo()">🐾 Abrir mi cartita 🐾</button>
         </div>
 
         <div id="loading-screen">
-            <div class="loading-dots">Abriendo sorpresa...</div>
+            <div class="loading-dots">🐾 Preparando algo muy lindo para ti... 🐾</div>
         </div>
 
         <div id="love-letter">
             <div class="letter-content">
-                <p>Hola <span class="highlight">Mi Kari Boo</span>,</p>
-                <p>Quería escribirte esto para recordarte lo muchísimo que te amo. Eres de lo mejor que tengo en la vida, la razón por la que sonrías todos los días y mi persona favorita en el mundo entero.</p>
-                <p>Me encanta cada momento que pasamos juntos, las risas, las pláticas y lo especial que haces cada uno de mis días. Gracias por estar siempre y por ser tan increíble.</p>
-                <p>Te adoro con todo mi corazón.</p>
-                <p class="signature">Tu Lexi boo</p>
+                <p>Hola mi <span class="highlight">Yari hermosa 🐱💖</span>,</p>
+                <p>Te hice esta pantallita para recordarte lo infinitamente especial e importante que eres para mí. De verdad eres de las cosas más bonitas que me han pasado en la vida, mi persona favorita en todo el mundo mundial y la razón de mis sonrisas diarias.</p>
+                <p>Amo cada momento a tu lado: nuestras pláticas, las risas, tus detalles y la forma tan bonita en la que iluminas absolutamente todo a mi alrededor. Gracias por estar siempre conmigo, por ser tan linda, tierna e increíble.</p>
+                <p>Te adoro con todo mi corazón, hoy y siempre. 🐾✨</p>
+                <p class="signature">Con muchísimo amor,<br>Tu Lexi boo 💖</p>
             </div>
-            <div class="css-heart"></div>
+            
+            <div class="cute-heart-container">
+                <span>🐾</span>
+                <span>💗</span>
+                <span>ฅ^•ﻌ•^ฅ</span>
+                <span>💗</span>
+                <span>🐾</span>
+            </div>
         </div>
     </div>
 
     <script>
         function iniciarDesbloqueo() {
-            document.getElementById('login-prompt').style.display = 'none';
-            const pantallaCarga = document.getElementById('loading-screen');
-            pantallaCarga.style.display = 'block';
-
-            setTimeout(() => {
-                pantallaCarga.style.display = 'none';
-                document.getElementById('love-letter').style.display = 'block';
-            }, 1500);
-        }
-    </script>
-
-</body>
-</html>
+            document.
